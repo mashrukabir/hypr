@@ -1,0 +1,40 @@
+live_config_reload = true
+
+[window]
+opacity = 0.6
+startup_mode = "Maximized"
+title = "Terminal"
+
+[font]
+size = 16.5
+
+[font.normal]
+family = "Noto Sans Mono"
+style = "Regular"
+
+[font.bold]
+family = "Noto Sans Mono"
+style = "Bold"
+
+[font.italic]
+family = "Noto Sans Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "Noto Sans Mono"
+style = "Bold Italic"
+
+[cursor.style]
+shape= "Beam"
+blinking = "Always"
+
+[keyboard]
+bindings = [
+  { key = "K", mods = "Control", action = "Copy" },
+  { key = "P", mods = "Control", action = "Paste" },
+  { key = "Insert", mods = "Shift", action = "PasteSelection" },
+  { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
+  { key = "Plus", mods = "Control", action = "IncreaseFontSize" },
+  { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+  { key = "Backspace", mods = "Control", action = "ResetFontSize" },
+]
