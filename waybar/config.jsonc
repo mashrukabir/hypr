@@ -1,0 +1,151 @@
+{
+    // "layer": "top", // Waybar at top layer
+   // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 1, // Waybar height (to be removed for auto height)
+    "spacing": 4, // Gaps between modules
+    "modules-left": [
+        "hyprland/workspaces#pacman",
+        "cpu",
+        "memory",
+        "temperature"
+    ],
+    "modules-center": [
+         
+    ],
+    "modules-right": [
+        "tray",
+        "network#speed",
+        "network",
+        "backlight",
+        "pulseaudio",
+        "battery",
+        "battery#bat2",
+        "clock"
+        
+    ],
+
+    // Modules configuration
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format": " {:%I:%M %p}",
+        "format-alt": " {:%I:%M %p    %d %B, %A, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+          "mode"          : "year",
+          "mode-mon-col"  : 3,
+          //"weeks-pos"     : "right", // Show week number
+          "on-scroll"     : 1,
+          "format": {
+          "months":     "<span color='#ffead3'><b>{}</b></span>",
+          "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+          "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+          "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+          "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                    }
+                    }
+        },   
+
+    "cpu": {
+        "interval": 1,
+        "format": "{usage}%  ",
+        "tooltip": false,
+        "on-click": "alacritty -e btop"
+    },
+    "memory": {
+        "interval": 1,
+        "format": "{used:0.1f}G  ",
+        "format-alt": "{percentage}%  ",
+        "format-alt-click": "click",
+        "tooltip": true,
+        "tooltip-format": "{used:0.1f}GB/{total:0.1f}G"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "interval": 1,
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [" ", "", " "]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}%  ",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "interval": 1,
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}%  ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " ",
+        "format-ethernet": "{ipaddr}/{cidr}  ",
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "format-linked": "{ifname} (No IP)  ",
+        "format-disconnected": "Disconnected  ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "network#speed": {
+        "interval": 1,
+        "format": "{ifname}",
+        "format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-ethernet": "󰌘   {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "tooltip-format": "{ipaddr}",
+        "format-linked": "󰈁 {ifname} (No IP)",
+        "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+        "tooltip-format-ethernet": "{ifname} 󰌘",
+        "tooltip-format-disconnected": "󰌙 Disconnected",
+        "max-length": 50
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon}  {volume} %  {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "  {format_source} ",
+        "format-source": "🎙  {volume}% ",
+        "format-source-muted":"",
+        "on-click": "alacritty -e pulsemixer",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "hands-free": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    }
+}
