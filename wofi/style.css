@@ -1,0 +1,111 @@
+* {
+  transition: 0.2s;
+}
+
+window {
+  font-family: "FreeSans", sans-serif;
+  font-size: 17px;
+  border-radius: 12px;
+  backdrop-filter: blur(12px); /* blur effect */
+  background-color: rgba(0, 0, 0, 0.4); /* transparent background */
+  padding: 10px;
+}
+
+#input {
+  padding: 8px;
+  margin: 10px 10px 10px 10px;
+  padding-left: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);
+  outline: none;
+  border-radius: 12px;
+  font-family: "FreeSans", sans-serif;
+}
+
+#input image {
+  color: #fff;
+}
+
+#input:focus {
+  border: 1px solid #ffffff;
+  background: rgba(0, 0, 0, 0.7); /* Slightly darker when focused, but still transparent */
+  outline: none;
+}
+
+#input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "FreeSans", sans-serif;
+}
+
+#inner-box {
+  margin: 10px 0;
+  margin-top: 0px;
+  border: none;
+  color: #ffffff;
+  border-radius: 12px;
+  font-family: "FreeSans", sans-serif;
+}
+
+#inner-box * {
+  transition: none;
+}
+
+#outer-box {
+  padding: 0 10px;
+  margin: 0px;
+  border: none;
+  border-radius: 12px;
+  font-family: "FreeSans", sans-serif;
+}
+
+#scroll {
+  margin-top: 0;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 5px;
+}
+
+#text:selected {
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "FreeSans", sans-serif;
+}
+
+#img {
+  margin-right: 8px;
+  background: transparent;
+}
+
+#text {
+  color: #e0e0e0; /* Light grey for unselected text */
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background: transparent;
+  font-family: "FreeSans", sans-serif;
+}
+
+#entry {
+  margin: 0px;
+  border: none;
+  border-radius: 12px;
+  background-color: transparent;
+  min-height: 28px;
+  font-weight: bold;
+  font-family: "FreeSans", sans-serif;
+  padding: 4px 8px; /* Added small padding */
+}
+
+#entry:selected {
+  outline: none;
+  margin: 0px;
+  border: none;
+  border-radius: 16px;
+  background-color: rgba(76, 86, 106, 0.8); /* Semi-transparent background for selected entry */
+  color: #ffffff;
+  font-family: "FreeSans", sans-serif;
+  padding: 4px 8px; /* Same padding as unselected */
+}
