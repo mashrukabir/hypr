@@ -1,5 +1,4 @@
 {
-    // "layer": "top", // Waybar at top layer
    // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 1, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules
@@ -84,13 +83,11 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": " {capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}%  ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
         "format-icons": [" ", " ", " ", " ", " "]
     },
     "battery#bat2": {
@@ -131,7 +128,7 @@
     "pulseaudio": {
         "scroll-step": 5,
         "format": "{icon} {volume}%  {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": "  {format_source} ",
         "format-source": "🎙  {volume}% ",
