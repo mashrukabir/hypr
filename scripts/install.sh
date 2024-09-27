@@ -14,7 +14,7 @@ git clone https://aur.archlinux.org/paru-bin.git
 cd paru-bin && makepkg -si --noconfirm
 cd .. && rm -rf paru-bin
 
-echo -e "\e[1;32mInstalling packages\e[0m"
+# Packages
 paru -S --noconfirm --needed hyprland waybar wofi swww hyprlock cliphist xdg-desktop-portal-hyprland noto-fonts noto-fonts-emoji alacritty mpv pulsemixer grim slurp playerctl polkit-gnome papirus-icon-theme nwg-look blueman fastfetch btop zoxide
 sudo systemctl enable bluetooth
 
@@ -51,8 +51,8 @@ xdg-settings set default-web-browser librewolf.desktop
 echo "QT_SCALE_FACTOR=1.25" | sudo tee -a /etc/environment && cd
 
 # NVIDIA
-echo -e "\e[1;32mNVIDIA Setup\e[0m"
-read -p "Does your system have an Nvidia GPU? (yes/no): " answer
+echo -e "\e[1;32mDoes your system have an Nvidia GPU? (yes/no): \e[0m"
+read -p "" answer
 answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 
 if [[ "$answer" == "yes" ]]; then
