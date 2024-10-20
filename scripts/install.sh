@@ -23,7 +23,7 @@ sudo systemctl enable bluetooth
 clear
 
 echo -e "\e[1;33mInstalling applications\e[0m"
-paru -S --noconfirm --needed obsidian signal-desktop syncthing keepassxc librewolf-bin qview-git vscodium-bin
+paru -S --noconfirm --needed obsidian syncthing keepassxc librewolf-bin qview-git vscodium-bin
 
 # Configuration
 echo -e "\e[1;34mConfiguring system\e[0m"
