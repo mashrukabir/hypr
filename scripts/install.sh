@@ -29,7 +29,7 @@ paru -S --noconfirm --needed obsidian syncthing keepassxc librewolf-bin qview-gi
 echo -e "\e[1;34mConfiguring system\e[0m"
 clear && cd && sudo rm /usr/share/hyprland/* && rm -rf ~/.config/hypr
 mkdir -p ~/Pictures/{Wallpapers,Screenshots} 
-mkdir -p ~/Downloads ~/Videos ~/Projects ~/Documents/Shared
+mkdir -p ~/Downloads ~/Videos ~/Projects
 mkdir -p ~/.config/hypr ~/.local/share/{icons,fonts,themes} 
 mv ~/hypr/{hyprland.conf,hyprlock.conf} ~/.config/hypr/
 mv ~/hypr/fonts ~/.local/share/
