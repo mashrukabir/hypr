@@ -15,7 +15,7 @@ cd paru-bin && makepkg -si --noconfirm
 cd .. && rm -rf paru-bin
 
 # Packages
-paru -S --noconfirm --needed hyprland waybar wofi swww hyprlock cliphist xdg-desktop-portal-hyprland noto-fonts noto-fonts-emoji alacritty mpv pulsemixer grim slurp playerctl polkit-gnome papirus-icon-theme nwg-look blueman fastfetch btop zoxide
+paru -S --noconfirm --needed hyprland waybar wofi swww hyprlock cliphist xdg-desktop-portal-hyprland noto-fonts noto-fonts-emoji alacritty mpv pulsemixer grim slurp playerctl polkit-gnome nwg-look blueman fastfetch btop zoxide
 sudo systemctl enable bluetooth
 
 # Thunar
@@ -27,7 +27,7 @@ paru -S --noconfirm --needed obsidian syncthing keepassxc librewolf-bin qview-gi
 
 # Configuration
 echo -e "\e[1;34mConfiguring system\e[0m"
-clear && cd && sudo rm /usr/share/hyprland/* && rm -rf ~/.config/hypr
+clear && cd && rm -rf ~/.config/hypr
 mkdir -p ~/Pictures/{Wallpapers,Screenshots} 
 mkdir -p ~/Downloads ~/Videos ~/Projects
 mkdir -p ~/.config/hypr ~/.local/share/{icons,fonts,themes} 
@@ -63,7 +63,6 @@ if [[ "$answer" == "yes" ]]; then
     cat <<EOF >> ~/.config/hypr/hyprland.conf
 env = LIBVA_DRIVER_NAME,nvidia
 env = XDG_SESSION_TYPE,wayland
-env = GBM_BACKEND,nvidia-drm
 env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 env = NVD_BACKEND,direct
 
