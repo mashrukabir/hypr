@@ -11,23 +11,21 @@ sudo sed -i 's/^timeout 3/timeout 0/' /boot/loader/loader.conf
 
 echo -e "\e[1;34mInstalling AUR helper...\e[0m"
 git clone https://aur.archlinux.org/paru-bin.git
-cd paru-bin && makepkg -si --noconfirm
-cd .. && rm -rf paru-bin
+cd paru-bin && makepkg -si --noconfirm && cd .. && rm -rf paru-bin
 
 # Packages
-paru -S --noconfirm --needed hyprland waybar wofi swww hyprlock cliphist xdg-desktop-portal-hyprland noto-fonts noto-fonts-emoji alacritty mpv pulsemixer grim slurp playerctl polkit-gnome papirus-icon-theme nwg-look blueman fastfetch btop zoxide
+paru -S --noconfirm hyprland waybar wofi swww hyprlock cliphist xdg-desktop-portal-hyprland noto-fonts noto-fonts-emoji alacritty mpv pulsemixer grim slurp playerctl polkit-gnome nwg-look blueman fastfetch btop zoxide
 sudo systemctl enable bluetooth
 
 # Thunar
-./thunar.sh
-clear
+./thunar.sh && clear
 
 echo -e "\e[1;33mInstalling applications\e[0m"
-paru -S --noconfirm --needed obsidian syncthing keepassxc librewolf-bin qview-git vscodium-bin
+paru -S --noconfirm obsidian syncthing keepassxc librewolf-bin qview-git vscodium-bin
 
 # Configuration
 echo -e "\e[1;34mConfiguring system\e[0m"
-clear && cd && sudo rm /usr/share/hyprland/* && rm -rf ~/.config/hypr
+sudo rm /usr/share/hyprland/* && rm -rf ~/.config/hypr
 mkdir -p ~/Pictures/{Wallpapers,Screenshots} 
 mkdir -p ~/Downloads ~/Videos ~/Projects
 mkdir -p ~/.config/hypr ~/.local/share/{icons,fonts,themes} 
@@ -39,9 +37,12 @@ tar -xvf Bibata-Modern-Ice.tar.xz -C ~/.local/share/icons/
 mv ~/.local/share/icons/Bibata-Modern-Ice ~/.local/share/icons/cursor
 rm Bibata-Modern-Ice.tar.xz
 
+git clone --depth 1 --filter=blob:none --sparse https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
+cd papirus-icon-theme && git sparse-checkout set Papirus && sudo mv Papirus /usr/share/icons/ && cd && rm -rf papirus-icon-theme
+
 git clone https://github.com/daniruiz/flat-remix-gtk.git && cd flat-remix-gtk
 cp -r themes/Flat-Remix-GTK-Blue-Darkest-Solid ~/.local/share/themes/Flat-Remix
-cd .. && rm -rf flat-remix-gtk
+cd && rm -rf flat-remix-gtk
 
 mv ~/hypr/{alacritty,wofi} ~/.config/
 mv ~/hypr/wall.jpg ~/Pictures/Wallpapers/
