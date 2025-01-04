@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S --noconfirm thunar thunar-volman tumbler ffmpegthumbnailer gvfs-mtp ntfs-3g
+sudo pacman -S --noconfirm thunar thunar-volman tumbler ffmpegthumbnailer gvfs-mtp
 
 # Rules
 volman_config_path=~/.config/Thunar/uca.xml
