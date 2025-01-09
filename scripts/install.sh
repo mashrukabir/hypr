@@ -17,7 +17,7 @@ sudo systemctl enable bluetooth
 
 echo -e "\e[1;33mInstalling applications\e[0m"
 paru -S --noconfirm obsidian syncthing keepassxc librewolf-bin qview-git
-paru -Rsc --noconfirm yay nano xterm unrar sysfsutils b43-fwcutter btrfs-progs ding-libs dosfstools ell eos-hooks f2fs-tools fd fzf
+paru -Rsc --noconfirm yay nano xterm unrar sysfsutils b43-fwcutter btrfs-progs ding-libs dosfstools ell eos-hooks f2fs-tools fd fzf sof-firmware smart-montools s-nail reflector rebuild-detector man-db man-pages
 
 # Configuration
 echo -e "\e[1;34mConfiguring system\e[0m"
