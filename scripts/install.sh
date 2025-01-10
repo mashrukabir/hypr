@@ -4,20 +4,16 @@
 sudo sed -i "s/#MAKEFLAGS=\"-j2\"/MAKEFLAGS=\"-j$nc\"/g" /etc/makepkg.conf
 sudo sed -i "s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T $nc -z -)/g" /etc/makepkg.conf
 
-echo -e "\e[1;34mInstalling AUR helper...\e[0m"
-git clone https://aur.archlinux.org/paru-bin.git
-cd paru-bin && makepkg -si --noconfirm && cd .. && rm -rf paru-bin
-
 # Packages
-paru -S --noconfirm hyprland waybar wofi swww hyprlock cliphist xdg-desktop-portal-hyprland alacritty mpv pulsemixer grim slurp polkit-gnome nwg-look blueman fastfetch btop zoxide
+yay -S --noconfirm hyprland waybar wofi swww hyprlock cliphist xdg-desktop-portal-hyprland alacritty mpv pulsemixer grim slurp polkit-gnome nwg-look blueman fastfetch btop zoxide
 sudo systemctl enable bluetooth
 
 # Thunar
 ./thunar.sh && clear
 
 echo -e "\e[1;33mInstalling applications\e[0m"
-paru -S --noconfirm obsidian syncthing keepassxc librewolf-bin qview-git
-paru -Rsc --noconfirm yay nano xterm unrar sysfsutils b43-fwcutter btrfs-progs ding-libs dosfstools ell eos-hooks f2fs-tools fd fzf sof-firmware smart-montools s-nail reflector rebuild-detector man-db man-pages
+yay -S --noconfirm obsidian syncthing keepassxc librewolf-bin qview-git
+yay -Rsc --noconfirm nano xterm unrar sysfsutils b43-fwcutter btrfs-progs ding-libs dosfstools ell eos-hooks f2fs-tools fd fzf sof-firmware smart-montools s-nail reflector rebuild-detector man-db man-pages
 
 # Configuration
 echo -e "\e[1;34mConfiguring system\e[0m"
